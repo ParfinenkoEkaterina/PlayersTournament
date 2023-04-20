@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Game {
 
-    List<Player> players = new ArrayList<Player>();
+    private List<Player> players = new ArrayList<Player>();
 
     public void register(Player player) {
         players.add(player);
@@ -29,11 +29,11 @@ public class Game {
 
         }
         if (player1 == null) {
-            throw new RuntimeException("Игрок 1 не найден");
+            throw new RuntimeException( "Игрок 1 не найден" );
         }
 
         if (player2 == null) {
-            throw new RuntimeException("Игрок 2 не найден");
+            throw new RuntimeException( "Игрок 2 не найден" );
         }
 
         if(player1.getStrength() > player2.getStrength()) {
