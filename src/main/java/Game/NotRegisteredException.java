@@ -2,7 +2,7 @@ package Game;
 
 public class NotRegisteredException  extends RuntimeException {
 
-    public NotRegisteredException (String message) {
+    public NotRegisteredException(String message) {
         super(message);
     }
 }

@@ -36,11 +36,11 @@ public class Game {
             throw new RuntimeException( "Игрок 2 не найден" );
         }
 
-        if(player1.getStrength() > player2.getStrength()) {
+        if (player1.getStrength() > player2.getStrength()) {
             return 1;
         }
 
-        if(player1.getStrength() < player2.getStrength()) {
+        if (player1.getStrength() < player2.getStrength()) {
             return 2;
         }
 
@@ -50,3 +50,4 @@ public class Game {
 
 
 }
+

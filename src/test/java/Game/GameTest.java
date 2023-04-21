@@ -71,10 +71,40 @@ public class GameTest {
         game.register(player2);
 
 
-        Assertions.assertThrows(NotRegisteredException.class, () -> {
-            game.round("Valya", "Vadim");
-        });
+        Assertions.assertThrows(RuntimeException.class, () ->
+            game.round("Vadim", "Valya"));
 
+    }
+
+    @Test
+    public void testWhenNoRegisteredSecond() {
+        Game game = new Game();
+
+        Player player1 = new Player(1, "Vasya", 130);
+        Player player2 = new Player(2, "Valya", 150);
+
+        game.register(player1);
+        game.register(player2);
+
+
+        Assertions.assertThrows(RuntimeException.class, () ->
+                game.round("Vasya", "Vova"));
+
+    }
+
+    @Test
+    public void testWhenBothAreNotRegistered() {
+        Game game = new Game();
+
+        Player player1 = new Player(1, "Vasya", 130);
+        Player player2 = new Player(2, "Valya", 150);
+
+        game.register(player1);
+        game.register(player2);
+
+
+        Assertions.assertThrows(RuntimeException.class, () ->
+                game.round("Vadim", "Vova"));
 
     }
 }
